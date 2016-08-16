@@ -27,6 +27,9 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+
+        //ルート宣言に{{task}}があれば、いつでも指定されたIDに対するTaskモデルを取得するように指示
+        $router->model('task','App\Task');
     }
 
     /**

@@ -1,5 +1,5 @@
 # Laravel PHP Framework
-練習用に作った初級編TODOです
+練習用に作った中級編TODOです
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
