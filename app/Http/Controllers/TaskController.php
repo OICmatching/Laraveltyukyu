@@ -11,11 +11,17 @@ use App\Repositories\TaskRepository;
 
 class TaskController extends Controller
 {
+    /*
+    タスクリポジトリーインスタンス
+
+    @var TaskRepository
+    */
+    protected $tasks;
+
     //新しいコントローラーインスタンスの生成
     //@param TaskRepository $tasks
     //@return void
-
-    public function __construct()
+    public function __construct(TaskRepository $tasks)
     {
         $this->middleware('auth');
 
@@ -27,9 +33,10 @@ class TaskController extends Controller
     // @return Reponse
 
     public function index(Request $request){
-        $tasks = Task::where('user_id', $request->user()->id)->get();
+        //サンプルになかったので
+        //$tasks = Task::where('user_id', $request->user()->id)->get();
 
-        return view('task.index',[
+        return view('tasks.index',[
             'tasks' => $this->tasks->forUser($request->user()),
         ]);
     }

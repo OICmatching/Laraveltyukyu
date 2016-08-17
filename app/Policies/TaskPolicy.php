@@ -2,8 +2,6 @@
 
 namespace App\Policies;
 
-use Illuminate\Auth\Access\HandlesAuthorization;
-
 use App\User;
 use App\Task;
 use Illuminate\Auth\Access\HandlesAuthorization;

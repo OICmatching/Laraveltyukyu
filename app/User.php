@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Task; //サンプルから追加
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -23,15 +24,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+/* サンプル見たらいらないみたいだったので消し
 }
-
 
 
 class User extends Model implements AuthenticatableContract,AuthorizableContract,CanResetPasswordContract{
     use Authenticatable, Authorizable,CanResetPassword;
 
     //他のEloquentプロパティー
-
+*/
     /*
     特定ユーザーの全タスク取得
     */

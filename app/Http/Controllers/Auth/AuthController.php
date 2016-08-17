@@ -27,8 +27,9 @@ class AuthController extends Controller
      * Where to redirect users after login / registration.
      *
      * @var string
+     * '/'だったのをサンプルを元に/tasksに変更
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/tasks';
 
     /**
      * Create a new authentication controller instance.
@@ -37,7 +38,8 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        //$this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware('guest',['except' => 'logout']);
     }
 
     /**

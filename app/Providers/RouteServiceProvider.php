@@ -29,7 +29,8 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
 
         //ルート宣言に{{task}}があれば、いつでも指定されたIDに対するTaskモデルを取得するように指示
-        $router->model('task','App\Task');
+        //サンプルみたらなかった
+        //$router->model('task','App\Task');
     }
 
     /**
@@ -40,9 +41,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $this->mapWebRoutes($router);
+        //$this->mapWebRoutes($router);
+        //サンプルにあったので追加
+        $router->group(['namespace' => $this->namespace], function ($router) {
+            require app_path('Http/routes.php');
+        });
 
-        //
     }
 
     /**
